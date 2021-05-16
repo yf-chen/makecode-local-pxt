@@ -114,7 +114,7 @@ export class NotificationBanner extends data.Component<ISettingsProps, {}> {
     renderCore() {
         const targetTheme = pxt.appTarget.appTheme;
         const isApp = pxt.winrt.isWinRT() || pxt.BrowserUtils.isElectron();
-        const isLocalServe = location.hostname === "localhost";
+        const isLocalServe = true;//location.hostname === "localhost";
         const isExperimentalUrlPath = location.pathname !== "/"
             && (targetTheme.appPathNames || []).indexOf(location.pathname) === -1;
         const showExperimentalBanner = !isLocalServe && isApp && isExperimentalUrlPath;

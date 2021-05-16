@@ -240,11 +240,12 @@ namespace pxsim {
         }
 
         export function isLocalHost(): boolean {
-            try {
-                return typeof window !== "undefined"
-                    && /^http:\/\/(localhost|127\.0\.0\.1):\d+\//.test(window.location.href)
-                    && !/nolocalhost=1/.test(window.location.href);
-            } catch (e) { return false; }
+            return true;
+//            try {
+//                return typeof window !== "undefined"
+//                    && /^http:\/\/(localhost|127\.0\.0\.1):\d+\//.test(window.location.href)
+//                    && !/nolocalhost=1/.test(window.location.href);
+//            } catch (e) { return false; }
         }
 
         export function unique<T>(arr: T[], f: (t: T) => string): T[] {

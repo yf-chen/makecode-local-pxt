@@ -232,7 +232,7 @@ export function guidGen() {
 }
 
 export function isLocal() {
-    return window.location.hostname === "localhost";
+    return true;//window.location.hostname === "localhost";
 }
 
 export function resolvePath(path: string) {

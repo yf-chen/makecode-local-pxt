@@ -1205,6 +1205,7 @@ namespace ts.pxtc.Util {
 
         pxt.debug(`loc: ${code}`);
 
+        pxt.Util.enableLiveLocalizationUpdates();
         const liveUpdateStrings = pxt.Util.liveLocalizationEnabled()
         return downloadTranslationsAsync(targetId, baseUrl, code,
             pxtBranch, targetBranch, liveUpdateStrings,
@@ -1258,6 +1259,7 @@ namespace ts.pxtc.Util {
                 break;
             case TranslationsKind.Apis:
                 stringFiles = [{ branch: targetBranch, staticName: "bundled-strings.json", path: targetId + "/bundled-strings.json" }];
+                live = false;
                 break;
             case TranslationsKind.SkillMap:
                 stringFiles = [{ branch: targetBranch, staticName: "skillmap-strings.json", path: "/skillmap-strings.json" }];
